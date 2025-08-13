@@ -35,15 +35,21 @@ export default function NewFeedback() {
       };
 
       const addNewSuggestion = async () => {
-        await fetch("/api/add-one-suggestion", {
+         try {
+          await fetch("/api/add-one-suggestion", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
         });
+      } catch (err) {
+          console.error("api error:", err)
+        }
       };
+
     return (
+
         <>
         <Link to="/"> {`< Go Back`}</Link>
 
@@ -88,4 +94,5 @@ export default function NewFeedback() {
             </form>
         </>
     )
+    
 }
