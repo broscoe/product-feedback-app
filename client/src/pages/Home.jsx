@@ -8,16 +8,19 @@ export default function Home({ suggestions }) {
 
     return (
         <>
-            <div>
+            <div className="logo">
                 <h1>My Company</h1>
                 <h2>Feedback Board</h2>
             </div>
 
-            <div><Link to="/NewFeedback">
-                <button > Add feedback</button>
-            </Link></div>
+            <div className="suggestionsHeader">
+                <p># Suggestions</p>
+                <Link to="/NewFeedback">
+                    <button className="addFeedback">+ Add feedback</button>
+                </Link>
+            </div>
 
-            <div className="filter-container">
+            <div className="filterContainer">
                 {/* filter stuff */}
                 <button>ALL</button>
                 <button>UI</button>
@@ -27,20 +30,23 @@ export default function Home({ suggestions }) {
                 <button>Feature</button>
             </div>
 
-            <div className="suggestion-container">
+            <div className="suggestionsContainer">
                 {/* cards */}
                 {suggestions && suggestions.length > 0 ?
                     (suggestions.map((suggestion, index) => {
-                         
+
                         return (<SuggestionCard suggestion={suggestion} key={index} />
                         )
                     })) : <>
                         <h2>There is no feedback yet.</h2>
                         <img src={illustrationEmpty} alt="image for empty suggestion area" />
                         <p>Got a suggestion? Found a bug that needs to be squashed?
-                             <br /> 
-                             We love hearing about new ideas to improve our app.
+                            <br />
+                            We love hearing about new ideas to improve our app.
                         </p>
+                        <Link to="/NewFeedback">
+                            <button className="addFeedback">+ Add feedback</button>
+                        </Link>
                     </>
                 }
             </div>

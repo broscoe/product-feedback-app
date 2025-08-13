@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function NewFeedback() {
 
@@ -20,15 +20,12 @@ export default function NewFeedback() {
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    addNewSuggestion();
-    let dataObj = formData;
-    // console.log(dataObj);
-    // console.log(JSON.stringify(formData))
-
+    
     //----send dataObj to backend----
+     addNewSuggestion()
 
     //----checks the data that is going to be sent to api----
-    console.log(formData, "in submit")
+    //console.log(formData, "in submit")
 
     // Reset the form
     setFormData({ feedback_title: '', category: '', feedback_detail: '' });
@@ -37,7 +34,7 @@ export default function NewFeedback() {
   const addNewSuggestion = async () => {
 
     try {
-      
+
       await fetch("/api/add-one-suggestion", {
         method: "POST",
         headers: {
@@ -53,7 +50,7 @@ export default function NewFeedback() {
   return (
 
     <>
-      <Link to="/"> {`< Go Back`}</Link>
+      <Link to="/" className="goBack"> {`< Go Back`}</Link>
 
       <form onSubmit={handleSubmit}>
 
@@ -63,7 +60,6 @@ export default function NewFeedback() {
         </label>
 
         <input
-          placeholder="Feedback Title"
           type="text"
           name="feedback_title"
           id="feedback_title"
@@ -76,22 +72,28 @@ export default function NewFeedback() {
           <p>Choose a category for your feedback</p>
         </label>
 
-        <input
+        <select
           placeholder="category"
           type="category"
           name="category"
           id="category"
+          //defaultValue="FEATURE"
           value={formData.category}
           onChange={handleChange}
-        />
+        >
+          <option value="FEATURE">Feature</option>
+          <option value="UI">UI</option>
+          <option value="UX">UX</option>
+          <option value="ENHANCEMENTS">Enhancement</option>
+          <option value="BUG">Bug</option>
+        </select>
 
-        <label htmlFor="feedback detail">
+        <label htmlFor="feedback_detail">
           <p>Feedback Detail</p>
           <p>Include any specific comments on what should be improved, added, etc.</p>
         </label>
 
         <input
-          placeholder="feedback detail"
           type="text"
           name="feedback_detail"
           id="feedback_detail"
@@ -99,6 +101,7 @@ export default function NewFeedback() {
           onChange={handleChange}
         />
 
+        <button type="reset">Cancel</button>
         <button type="submit">Submit</button>
 
       </form>
