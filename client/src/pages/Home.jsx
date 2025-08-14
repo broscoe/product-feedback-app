@@ -1,11 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import SuggestionCard from '../components/SuggestionCard'
 import illustrationEmpty from '../assets/suggestions/illustration-empty.svg'
 
+
 export default function Home({ suggestions }) {
 
+    const [filterCategory, setFilterCategory] = useState("ALL")
+    const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions); 
 
+    console.log(filteredSuggestions)
+    function filterState(category) {
+        setFilterCategory(category)
+        if (category === "ALL") {
+            setFilteredSuggestions(suggestions)
+        } else {
+            const filtering = suggestions.filter((suggestion) => suggestions.category === category)
+            setFilteredSuggestions(filtering)
+        }
+    }
+
+    useEffect(() => {
+        setFilteredSuggestions(suggestions);
+      }, [suggestions]);
     return (
         <>
             <div className="logo">
@@ -22,30 +40,35 @@ export default function Home({ suggestions }) {
 
             <div className="filterContainer">
                 {/* filter stuff */}
-                <button>ALL</button>
-                <button>UI</button>
-                <button>UX</button>
-                <button>Enhancement</button>
-                <button>Bug</button>
-                <button>Feature</button>
+                <button onClick={() => filterState("ALL")}>ALL</button>
+                <button onClick={() => filterState("UI")}>UI</button>
+                <button onClick={() => filterState("UX")}>UX</button>
+                <button onClick={() => filterState("ENHANCEMENTS")}>Enhancement</button>
+                <button onClick={() => filterState("BUG")}>Bug</button>
+                <button onClick={() => filterState("FEATURE")}>Feature</button>
             </div>
 
             <div className="suggestionsContainer">
                 {/* cards */}
-                {suggestions && suggestions.length > 0 ?
-                    (suggestions.map((suggestion, index) => {
+                {filteredSuggestions && filteredSuggestions.length > 0 ?
+                    (filteredSuggestions.map((suggestion, index) => {
 
                         return (<SuggestionCard suggestion={suggestion} key={index} />
                         )
-                    })) : <>
+                    })) : 
+
+                    <>
                         <h2>There is no feedback yet.</h2>
+
                         <img src={illustrationEmpty} alt="image for empty suggestion area" />
+
                         <p>Got a suggestion? Found a bug that needs to be squashed?
                             <br />
                             We love hearing about new ideas to improve our app.
                         </p>
+
                         <Link to="/NewFeedback">
-                            <button className="addFeedback">+ Add feedback</button>
+                            <button className="addFeedback">+ Add Feedback</button>
                         </Link>
                     </>
                 }

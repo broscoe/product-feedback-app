@@ -102,7 +102,7 @@ export default function NewFeedback() {
         />
 
         <button type="reset">Cancel</button>
-        <button type="submit">Submit</button>
+        <button type="submit" className="addFeedback">Add Feedback</button>
 
       </form>
     </>
