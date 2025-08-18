@@ -10,13 +10,14 @@ export default function Home({ suggestions }) {
     const [filterCategory, setFilterCategory] = useState("ALL")
     const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions); 
 
-    console.log(filteredSuggestions)
+    //console.log(filteredSuggestions, "filtered suggestions")
     function filterState(category) {
         setFilterCategory(category)
+        //console.log(category, "category")
         if (category === "ALL") {
             setFilteredSuggestions(suggestions)
         } else {
-            const filtering = suggestions.filter((suggestion) => suggestions.category === category)
+            const filtering = suggestions.filter((suggestion) => suggestion.category === category)
             setFilteredSuggestions(filtering)
         }
     }
@@ -26,19 +27,19 @@ export default function Home({ suggestions }) {
       }, [suggestions]);
     return (
         <>
-            <div className="logo">
+            <div className="logo" id="logo">
                 <h1>My Company</h1>
                 <h2>Feedback Board</h2>
             </div>
 
-            <div className="suggestionsHeader">
-                <p># Suggestions</p>
+            <div className="suggestionsHeader" id="suggestionHeader">
+                <p>{filteredSuggestions.length} Suggestions</p>
                 <Link to="/NewFeedback">
                     <button className="addFeedback">+ Add feedback</button>
                 </Link>
             </div>
 
-            <div className="filterContainer">
+            <div className="filterContainer" id="filterContainer">
                 {/* filter stuff */}
                 <button onClick={() => filterState("ALL")}>ALL</button>
                 <button onClick={() => filterState("UI")}>UI</button>
@@ -48,7 +49,7 @@ export default function Home({ suggestions }) {
                 <button onClick={() => filterState("FEATURE")}>Feature</button>
             </div>
 
-            <div className="suggestionsContainer">
+            <div className="suggestionsContainer"  id="suggestionsContainer">
                 {/* cards */}
                 {filteredSuggestions && filteredSuggestions.length > 0 ?
                     (filteredSuggestions.map((suggestion, index) => {

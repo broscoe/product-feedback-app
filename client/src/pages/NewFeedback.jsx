@@ -65,6 +65,7 @@ export default function NewFeedback() {
           id="feedback_title"
           value={formData.feedback_title}
           onChange={handleChange}
+          required
         />
 
         <label htmlFor="category">
@@ -80,6 +81,7 @@ export default function NewFeedback() {
           //defaultValue="FEATURE"
           value={formData.category}
           onChange={handleChange}
+          required
         >
           <option value="FEATURE">Feature</option>
           <option value="UI">UI</option>
@@ -99,9 +101,10 @@ export default function NewFeedback() {
           id="feedback_detail"
           value={formData.feedback_detail}
           onChange={handleChange}
+          required
         />
 
-        <button type="reset">Cancel</button>
+        <button type="reset" className="cancelButton">Cancel</button>
         <button type="submit" className="addFeedback">Add Feedback</button>
 
       </form>
