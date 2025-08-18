@@ -25,21 +25,22 @@ export default function Home({ suggestions }) {
     useEffect(() => {
         setFilteredSuggestions(suggestions);
       }, [suggestions]);
+      
     return (
         <>
-            <div className="logo" id="logo">
+            <div className="logo">
                 <h1>My Company</h1>
                 <h2>Feedback Board</h2>
             </div>
 
-            <div className="suggestionsHeader" id="suggestionHeader">
+            <div className="suggestionsHeader">
                 <p>{filteredSuggestions.length} Suggestions</p>
                 <Link to="/NewFeedback">
                     <button className="addFeedback">+ Add feedback</button>
                 </Link>
             </div>
 
-            <div className="filterContainer" id="filterContainer">
+            <div className="filterContainer">
                 {/* filter stuff */}
                 <button onClick={() => filterState("ALL")}>ALL</button>
                 <button onClick={() => filterState("UI")}>UI</button>
@@ -49,7 +50,7 @@ export default function Home({ suggestions }) {
                 <button onClick={() => filterState("FEATURE")}>Feature</button>
             </div>
 
-            <div className="suggestionsContainer"  id="suggestionsContainer">
+            <div className="suggestionsContainer">
                 {/* cards */}
                 {filteredSuggestions && filteredSuggestions.length > 0 ?
                     (filteredSuggestions.map((suggestion, index) => {

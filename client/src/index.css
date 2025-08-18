@@ -9,16 +9,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
   margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
 
 body {
   background-color: #F2F4FF;
-  display: flex;
-  place-items: center;
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 button {
@@ -30,7 +30,7 @@ button {
 .logo {
   background-image: url("./assets/suggestions/mobile/background-header.png");
   color: #FFFFFF;
-  width: 100vw;
+  width: 100%;
   padding: .5rem;
 }
 
@@ -40,6 +40,8 @@ button {
   display: flex;
   flex-direction: row;
   place-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .addFeedback {
@@ -50,7 +52,7 @@ button {
 
 .filterContainer {
   background-color: #FFFFFF;
-  display: inline;
+  display: block;
 }
 
 .filterContainer button {
@@ -85,7 +87,7 @@ input, select {
   color: #FFFFFF
 }
 
-#logo {
+/* #logo {
   grid-area: logo;
 }
 
@@ -99,14 +101,15 @@ input, select {
 
 #suggestionsContainer {
   grid-area: suggestionsContainer;
-}
+} */
 
- @media (min-width:380px)  {
+ @media (min-width:600px)  {
+
   .logo {
     background-image: url("./assets/suggestions/tablet/background-header.png");
   }
   
-  body {
+  #root {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -122,10 +125,29 @@ input, select {
     padding: 8px;
     align-items: center;
   }
+
+
+.logo {
+  grid-area: logo;
+}
+
+.suggestionHeader {
+  grid-area: suggestionHeader;
+}
+
+.filterContainer {
+  grid-area: filterContainer;
+}
+
+.suggestionsContainer {
+  grid-area: suggestionsContainer;
+}
+
 }
 
 
 @media (min-width:1025px) {
+  
   .logo {
     background-image: url("./assets/suggestions/desktop/background-header.png");
   }
@@ -145,5 +167,23 @@ input, select {
     margin: 16px;
     padding: 8px;
     align-items: center;
+  
   }
+
+.logo {
+  grid-area: logo;
+}
+
+.suggestionHeader {
+  grid-area: suggestionHeader;
+}
+
+.filterContainer {
+  grid-area: filterContainer;
+}
+
+.suggestionsContainer {
+  grid-area: suggestionsContainer;
+}
+  
 } 
