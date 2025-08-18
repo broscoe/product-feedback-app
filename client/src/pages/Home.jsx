@@ -25,7 +25,7 @@ export default function Home({ suggestions }) {
     useEffect(() => {
         setFilteredSuggestions(suggestions);
       }, [suggestions]);
-      
+
     return (
         <>
             <div className="logo">
@@ -34,6 +34,7 @@ export default function Home({ suggestions }) {
             </div>
 
             <div className="suggestionsHeader">
+                <img src="../assets/suggestions/icon-suggestions.svg" alt="suggestions Icon" />
                 <p>{filteredSuggestions.length} Suggestions</p>
                 <Link to="/NewFeedback">
                     <button className="addFeedback">+ Add feedback</button>

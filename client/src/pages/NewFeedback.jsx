@@ -52,6 +52,7 @@ export default function NewFeedback() {
     <>
       <Link to="/" className="goBack"> {`< Go Back`}</Link>
 
+      <img src="../assets/icons/icon-plus.svg" alt="Plus Icon" />
       <form onSubmit={handleSubmit}>
 
         <label htmlFor="feedback_title">

@@ -11,9 +11,11 @@
   -moz-osx-font-smoothing: grayscale;
   
   margin: 0;
+  padding: 0;
   display: grid;
   place-items: center;
   min-height: 100vh;
+  display: flex;
 }
 
 body {
@@ -53,12 +55,13 @@ button {
 .filterContainer {
   background-color: #FFFFFF;
   display: block;
+  padding: .5rem;
 }
 
 .filterContainer button {
   background-color: #F2F4FF;
   color: #4661E6;
-  gap: 2rem;
+  margin: .5rem;
 }
 
 .suggestionsContainer {
@@ -87,46 +90,6 @@ input, select {
   color: #FFFFFF
 }
 
-/* #logo {
-  grid-area: logo;
-}
-
-#suggestionHeader {
-  grid-area: suggestionHeader;
-}
-
-#filterContainer {
-  grid-area: filterContainer;
-}
-
-#suggestionsContainer {
-  grid-area: suggestionsContainer;
-} */
-
- @media (min-width:600px)  {
-
-  .logo {
-    background-image: url("./assets/suggestions/tablet/background-header.png");
-  }
-  
-  #root {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "logo filterContainer ."
-    "logo filterContainer ."
-    "suggestionHeader suggestionHeader suggestionHeader"
-    "suggestionsContainer suggestionsContainer suggestionsContainer"
-    "suggestionsContainer suggestionsContainer suggestionsContainer"
-    "suggestionsContainer suggestionsContainer suggestionsContainer"
-    "suggestionsContainer suggestionsContainer suggestionsContainer";
-    margin: 16px;
-    padding: 8px;
-    align-items: center;
-  }
-
-
 .logo {
   grid-area: logo;
 }
@@ -143,27 +106,74 @@ input, select {
   grid-area: suggestionsContainer;
 }
 
+ @media (min-width:500px)  {
+
+  .logo {
+    background-image: url("./assets/suggestions/tablet/background-header.png");
+  }
+  
+  #root {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "logo filterContainer ."
+    "logo filterContainer ."
+    "suggestionsHeader suggestionsHeader suggestionsHeader"
+    "suggestionsContainer suggestionsContainer suggestionsContainer"
+    "suggestionsContainer suggestionsContainer suggestionsContainer"
+    "suggestionsContainer suggestionsContainer suggestionsContainer"
+    "suggestionsContainer suggestionsContainer suggestionsContainer";
+    grid-gap: 2rem;
+    margin: 16px;
+    padding: 8px;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+
+.logo {
+  grid-area: logo;
+  border-radius: 6px;
+}
+
+.suggestionsHeader {
+  grid-area: suggestionsHeader;
+  border-radius: 6px;
+}
+
+.filterContainer {
+  grid-area: filterContainer;
+  border-radius: 6px;
+}
+
+.suggestionsContainer {
+  grid-area: suggestionsContainer;
+}
+
 }
 
 
-@media (min-width:1025px) {
+@media (min-width:750px) {
   
   .logo {
     background-image: url("./assets/suggestions/desktop/background-header.png");
+    border-radius: 6px;
   }
   
-  body {
+  #root {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    "logo   suggestionHeader suggestionHeader suggestionHeader"
+    "logo   suggestionsHeader suggestionsHeader suggestionsHeader"
     "logo  suggestionsContainer suggestionsContainer suggestionsContainer"
     "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
     "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
     ". suggestionsContainer suggestionsContainer suggestionsContainer"
     ". suggestionsContainer suggestionsContainer suggestionsContainer"
     ". suggestionsContainer suggestionsContainer suggestionsContainer";
+    grid-gap: 2rem;
     margin: 16px;
     padding: 8px;
     align-items: center;
@@ -174,12 +184,15 @@ input, select {
   grid-area: logo;
 }
 
-.suggestionHeader {
-  grid-area: suggestionHeader;
+.suggestionsHeader {
+  grid-area: suggestionsHeader;
+  width: 100%;
+  border-radius: 6px;
 }
 
 .filterContainer {
   grid-area: filterContainer;
+  border-radius: 6px;
 }
 
 .suggestionsContainer {
