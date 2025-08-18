@@ -93,13 +93,34 @@ input, select {
   grid-area: suggestionHeader;
 }
 
+#filterContainer {
+  grid-area: filterContainer;
+}
+
+#suggestionsContainer {
+  grid-area: suggestionsContainer;
+}
+
  @media (min-width:380px)  {
   .logo {
     background-image: url("./assets/suggestions/tablet/background-header.png");
   }
   
   body {
-    background-color: yellow;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "logo filterContainer ."
+    "logo filterContainer ."
+    "suggestionHeader suggestionHeader suggestionHeader"
+    "suggestionsContainer suggestionsContainer suggestionsContainer"
+    "suggestionsContainer suggestionsContainer suggestionsContainer"
+    "suggestionsContainer suggestionsContainer suggestionsContainer"
+    "suggestionsContainer suggestionsContainer suggestionsContainer";
+    margin: 16px;
+    padding: 8px;
+    align-items: center;
   }
 }
 
@@ -110,6 +131,19 @@ input, select {
   }
   
   body {
-    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "logo   suggestionHeader suggestionHeader suggestionHeader"
+    "logo  suggestionsContainer suggestionsContainer suggestionsContainer"
+    "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+    "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+    ". suggestionsContainer suggestionsContainer suggestionsContainer"
+    ". suggestionsContainer suggestionsContainer suggestionsContainer"
+    ". suggestionsContainer suggestionsContainer suggestionsContainer";
+    margin: 16px;
+    padding: 8px;
+    align-items: center;
   }
 } 
