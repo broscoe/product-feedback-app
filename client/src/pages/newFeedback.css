@@ -1,0 +1,15 @@
+body {
+    background-color: #F7F8FD;
+    color: #373f68;
+    display: grid;
+}
+
+textarea {
+    background-color: #F7F8FD;
+}
+
+#buttonContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+}

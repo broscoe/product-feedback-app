@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './newFeedback.css';
 
 export default function NewFeedback() {
 
@@ -20,9 +21,9 @@ export default function NewFeedback() {
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    
+
     //----send dataObj to backend----
-     addNewSuggestion()
+    addNewSuggestion()
 
     //----checks the data that is going to be sent to api----
     //console.log(formData, "in submit")
@@ -52,16 +53,16 @@ export default function NewFeedback() {
     <>
       <Link to="/" className="goBack"> {`< Go Back`}</Link>
 
-      <img src="../assets/icons/icon-plus.svg" alt="Plus Icon" />
+      
       <form onSubmit={handleSubmit}>
-
+<img src="../assets/icons/icon-plus.svg" alt="Plus Icon" />
         <label htmlFor="feedback_title">
           <p>feedback Title</p>
           <p>Add a short, descriptive headline</p>
         </label>
 
         <input
-          type="text"
+          type="text-area"
           name="feedback_title"
           id="feedback_title"
           value={formData.feedback_title}
@@ -96,7 +97,7 @@ export default function NewFeedback() {
           <p>Include any specific comments on what should be improved, added, etc.</p>
         </label>
 
-        <input
+        <textarea
           type="text"
           name="feedback_detail"
           id="feedback_detail"
@@ -104,9 +105,12 @@ export default function NewFeedback() {
           onChange={handleChange}
           required
         />
+        <br />
 
-        <button type="reset" className="cancelButton">Cancel</button>
-        <button type="submit" className="addFeedback">Add Feedback</button>
+        <div id="buttonContainer">
+          <button type="submit" className="addFeedback">Add Feedback</button>
+          <button type="reset" className="cancelButton">Cancel</button>
+        </div>
 
       </form>
     </>

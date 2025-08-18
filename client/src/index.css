@@ -9,7 +9,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   margin: 0;
   padding: 0;
   display: grid;
@@ -21,6 +21,34 @@
 body {
   background-color: #F2F4FF;
   margin: 0;
+}
+
+h1 {
+  font-family: jost bold;
+  font-size: 24px;
+  line-height: 35px;
+  word-spacing: 0.33;
+}
+
+h2 {
+  font-family: jost bold;
+  font-size: 20px;
+  line-height: 29px;
+  word-spacing: 0.25;
+}
+
+h3 {
+  font-family: jost bold;
+  font-size: 18px;
+  line-height: 26px;
+  word-spacing: 0.25;
+}
+
+h4 {
+  font-family: jost bold;
+  font-size: 14px;
+  line-height: 20px;
+  word-spacing: 0.2;
 }
 
 button {
@@ -48,9 +76,16 @@ button {
 
 .addFeedback {
   background-color: #AD1FEA;
-  color:#FFFFFF;
+  color: #FFFFFF;
   align-self: flex-end;
 }
+
+.addFeedback:hover {
+  background-color: #c75af6;
+  color: #FFFFFF;
+  align-self: flex-end;
+}
+
 
 .filterContainer {
   background-color: #FFFFFF;
@@ -68,16 +103,20 @@ button {
   max-width: 370px;
   margin: 2rem auto;
 }
-.suggestionCard, form {
+
+.suggestionCard,
+form {
   background-color: #FFFFFF;
   padding: 2rem;
   margin: 1rem;
   border-radius: 6px;
 }
 
-input, select {
+input,
+select {
   background-color: #F2F4FF;
   border-style: none;
+  width: 80%;
 }
 
 .cardCategoryButton {
@@ -87,6 +126,11 @@ input, select {
 
 .cancelButton {
   background-color: #373f68;
+  color: #FFFFFF
+}
+
+.cancelButton:hover {
+  background-color: #656ea3;
   color: #FFFFFF
 }
 
@@ -106,24 +150,32 @@ input, select {
   grid-area: suggestionsContainer;
 }
 
- @media (min-width:500px)  {
+:required {
+  border-color: #d73738;
+}
+
+option:hover,
+option:focus {
+  background: plum;
+}
+@media (min-width:420px) {
 
   .logo {
     background-image: url("./assets/suggestions/tablet/background-header.png");
   }
-  
+
   #root {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "logo filterContainer ."
-    "logo filterContainer ."
-    "suggestionsHeader suggestionsHeader suggestionsHeader"
-    "suggestionsContainer suggestionsContainer suggestionsContainer"
-    "suggestionsContainer suggestionsContainer suggestionsContainer"
-    "suggestionsContainer suggestionsContainer suggestionsContainer"
-    "suggestionsContainer suggestionsContainer suggestionsContainer";
+    grid-template-areas:
+      "logo filterContainer ."
+      "logo filterContainer ."
+      "suggestionsHeader suggestionsHeader suggestionsHeader"
+      "suggestionsContainer suggestionsContainer suggestionsContainer"
+      "suggestionsContainer suggestionsContainer suggestionsContainer"
+      "suggestionsContainer suggestionsContainer suggestionsContainer"
+      "suggestionsContainer suggestionsContainer suggestionsContainer";
     grid-gap: 2rem;
     margin: 16px;
     padding: 8px;
@@ -132,71 +184,120 @@ input, select {
   }
 
 
-.logo {
-  grid-area: logo;
-  border-radius: 6px;
+  .logo {
+    grid-area: logo;
+    border-radius: 6px;
+  }
+
+  .suggestionsHeader {
+    grid-area: suggestionsHeader;
+    border-radius: 6px;
+  }
+
+  .filterContainer {
+    grid-area: filterContainer;
+    border-radius: 6px;
+  }
+
+  .suggestionsContainer {
+    grid-area: suggestionsContainer;
+    width: 100%;
+  }
+
 }
 
-.suggestionsHeader {
-  grid-area: suggestionsHeader;
-  border-radius: 6px;
-}
 
-.filterContainer {
-  grid-area: filterContainer;
-  border-radius: 6px;
-}
+@media (min-width:1000px) {
 
-.suggestionsContainer {
-  grid-area: suggestionsContainer;
-}
-
-}
-
-
-@media (min-width:750px) {
-  
   .logo {
     background-image: url("./assets/suggestions/desktop/background-header.png");
     border-radius: 6px;
   }
-  
+
   #root {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "logo   suggestionsHeader suggestionsHeader suggestionsHeader"
-    "logo  suggestionsContainer suggestionsContainer suggestionsContainer"
-    "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
-    "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
-    ". suggestionsContainer suggestionsContainer suggestionsContainer"
-    ". suggestionsContainer suggestionsContainer suggestionsContainer"
-    ". suggestionsContainer suggestionsContainer suggestionsContainer";
+    grid-template-areas:
+      "logo   suggestionsHeader suggestionsHeader suggestionsHeader"
+      "logo  suggestionsContainer suggestionsContainer suggestionsContainer"
+      "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+      "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+      ". suggestionsContainer suggestionsContainer suggestionsContainer"
+      ". suggestionsContainer suggestionsContainer suggestionsContainer"
+      ". suggestionsContainer suggestionsContainer suggestionsContainer";
     grid-gap: 2rem;
     margin: 16px;
     padding: 8px;
     align-items: center;
-  
+
   }
 
-.logo {
-  grid-area: logo;
+  .logo {
+    grid-area: logo;
+  }
+
+  .suggestionsHeader {
+    grid-area: suggestionsHeader;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .filterContainer {
+    grid-area: filterContainer;
+    border-radius: 6px;
+  }
+
+  .suggestionsContainer {
+    grid-area: suggestionsContainer;
+  }
+
+
 }
 
-.suggestionsHeader {
-  grid-area: suggestionsHeader;
-  width: 100%;
-  border-radius: 6px;
-}
+@media (min-width:750px) {
 
-.filterContainer {
-  grid-area: filterContainer;
-  border-radius: 6px;
-}
+  .logo {
+    background-image: url("./assets/suggestions/desktop/background-header.png");
+    border-radius: 6px;
+  }
 
-.suggestionsContainer {
-  grid-area: suggestionsContainer;
+  #root {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "logo   suggestionsHeader suggestionsHeader suggestionsHeader suggestionsHeader"
+      "logo  suggestionsContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+      "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+      "filterContainer suggestionsContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+      ". suggestionsContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+      ". suggestionsContainer suggestionsContainer suggestionsContainer suggestionsContainer"
+      ". suggestionsContainer suggestionsContainer suggestionsContainer suggestionsContainer";
+    grid-gap: 2rem;
+    margin: 16px;
+    padding: 8px;
+    align-items: center;
+
+  }
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .suggestionsHeader {
+    grid-area: suggestionsHeader;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .filterContainer {
+    grid-area: filterContainer;
+    border-radius: 6px;
+  }
+
+  .suggestionsContainer {
+    grid-area: suggestionsContainer;
+  }
+
 }
-  
-} 
