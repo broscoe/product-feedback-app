@@ -1,15 +1,61 @@
-body {
-    background-color: #F7F8FD;
-    color: #373f68;
-    display: grid;
-}
+ body {
+     background-color: #F7F8FD;
+     color: #373f68;
+     display: grid;
+ }
 
-textarea {
-    background-color: #F7F8FD;
-}
+ Link {
+     text-decoration: none;
+ }
 
-#buttonContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: stretch;
-}
+ textarea {
+     background-color: #F7F8FD;
+     width: 90%;
+ }
+
+ #buttonContainer {
+     display: block;
+     flex-direction: row-reverse;
+     align-items: self-start;
+     width: 100%;
+ }
+
+ form button {
+     width: 50%;
+ }
+
+ #formContainer {
+     grid-area: suggestionsContainer;
+ }
+
+ :required {
+     border-color: #d73738;
+ }
+
+ option:hover,
+ option:focus {
+     background: plum;
+ }
+
+ @media (min-width:420px) {
+     /* #formContainer {
+    display: block;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+}  */
+
+     #buttonContainer {
+         flex-direction: row-reverse;
+         justify-content: end;
+         width: 100%;
+     }
+
+     form button {
+         width: 25%;
+     }
+ }
+
+ @media (min-width:750px) {}
+
+ @media (min-width:1000px) {}

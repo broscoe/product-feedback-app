@@ -150,14 +150,6 @@ select {
   grid-area: suggestionsContainer;
 }
 
-:required {
-  border-color: #d73738;
-}
-
-option:hover,
-option:focus {
-  background: plum;
-}
 @media (min-width:420px) {
 
   .logo {
@@ -207,7 +199,7 @@ option:focus {
 }
 
 
-@media (min-width:1000px) {
+@media (min-width:750px) {
 
   .logo {
     background-image: url("./assets/suggestions/desktop/background-header.png");
@@ -250,12 +242,13 @@ option:focus {
 
   .suggestionsContainer {
     grid-area: suggestionsContainer;
+    width: 80%;
   }
 
 
 }
 
-@media (min-width:750px) {
+@media (min-width:1000px) {
 
   .logo {
     background-image: url("./assets/suggestions/desktop/background-header.png");
