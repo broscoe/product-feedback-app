@@ -2,16 +2,19 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './newFeedback.css'
+import plusIcon from "../assets/icons/icon-plus.svg"
 //import '../index.css';
 
 export default function NewFeedback() {
 
+  // ----Use state for the form data----
   const [formData, setFormData] = useState({
     feedback_title: '',
     category: '',
     feedback_detail: ''
   });
 
+  // ----handle change for the form data----
   const handleChange = (event) => {
     const { name, value } = event.target;
     // console.log(name, value);
@@ -24,9 +27,9 @@ export default function NewFeedback() {
     e.preventDefault();
 
     //----send dataObj to backend----
-    addNewSuggestion()
+    addNewSuggestion();
 
-    //----checks the data that is going to be sent to api----
+    //----checks the data that is going to be sent to api (uncomment the line bellow to test)----
     //console.log(formData, "in submit")
 
     // Reset the form
@@ -35,6 +38,7 @@ export default function NewFeedback() {
 
   const addNewSuggestion = async () => {
 
+    // ----helper function to add one suggestion API endpoint
     try {
 
       await fetch("/api/add-one-suggestion", {
@@ -46,7 +50,7 @@ export default function NewFeedback() {
       });
     } catch (err) {
       console.error("api error:", err)
-    }
+    };
   };
 
   return (
@@ -57,9 +61,9 @@ export default function NewFeedback() {
 
 
         <form onSubmit={handleSubmit}>
-          <img src="../assets/icons/icon-plus.svg" alt="Plus Icon" />
+          <img src={plusIcon} alt="Plus Icon" id="plusIcon"/>
           <label htmlFor="feedback_title">
-            <h3>feedback Title</h3>
+            <h3>Feedback Title</h3>
             <h4>Add a short, descriptive headline</h4>
           </label>
 
@@ -116,6 +120,7 @@ export default function NewFeedback() {
         </form>
       </div>
     </>
+
   )
 
 }

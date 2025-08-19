@@ -134,6 +134,15 @@ select {
   color: #FFFFFF
 }
 
+.goBack {
+  text-decoration: none;
+  color: #373f68;
+}
+
+.goBack:hover {
+  text-decoration: underline;
+}
+
 .logo {
   grid-area: logo;
 }
