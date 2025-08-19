@@ -13,6 +13,17 @@
      width: 90%;
  }
 
+ #plusIcon {
+    /* background-color: linear-gradient(45deg, var(#373f68),var(purple)); */
+    background-color: purple;
+    border-radius: 100%;
+    padding: .5rem;
+    width: 2rem;
+    height: 2rem;
+    position:absolute;
+    top: 75px;
+ }
+ 
  #buttonContainer {
      display: flex;
      flex-direction: row-reverse;
