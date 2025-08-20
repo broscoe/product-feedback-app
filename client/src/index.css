@@ -100,6 +100,12 @@ button {
   margin: .5rem;
 }
 
+.filterContainer button:focus {
+  background-color: #4661E6;
+  color: #FFFFFF;
+  margin: .5rem;
+}
+
 .suggestionsContainer {
   max-width: 370px;
   margin: 2rem auto;
