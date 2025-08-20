@@ -14,14 +14,13 @@
  }
 
  #plusIcon {
-    /* background-color: linear-gradient(45deg, var(#373f68),var(purple)); */
-    background-color: purple;
-    border-radius: 100%;
+   
+    border-radius: 10%;
     padding: .5rem;
     width: 2rem;
     height: 2rem;
     position:absolute;
-    top: 75px;
+    top: 25px;
  }
  
  #buttonContainer {
@@ -41,23 +40,13 @@
      grid-area: suggestionsContainer;
  } 
 
- :required {
-     border-color: #d73738;
- }
-
  option:hover,
  option:focus {
      background: plum;
  }
 
  @media (min-width:420px) {
-     /* #formContainer {
-    display: block;
-    flex-direction: column;
-    align-content: center;
-    width: 100%;
-}  */
-
+     
      #buttonContainer {
          flex-direction: row-reverse;
          justify-content: end;
@@ -67,8 +56,24 @@
      form button {
          width: 25%;
      }
+
+     #plusIcon {
+        border-radius: 100%;
+        padding: .5rem;
+        width: 2rem;
+        height: 2rem;
+        position:absolute;
+        top: 140px;
+     }
  }
 
- @media (min-width:750px) {}
-
- @media (min-width:1000px) {}
+ @media (min-width:750px) {
+    #plusIcon {
+        border-radius: 100%;
+        padding: .5rem;
+        width: 2rem;
+        height: 2rem;
+        position:absolute;
+        top: 75px;
+     }
+ }

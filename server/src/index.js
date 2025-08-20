@@ -31,7 +31,7 @@ app.listen(port, () => {
 
 async function getAllSuggestions() {
     const result = await db.query("SELECT * FROM suggestions");
-    console.log(result);
+    //console.log(result);
     return result.rows;
   }
 

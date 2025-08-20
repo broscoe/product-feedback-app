@@ -11,7 +11,7 @@ export default function Home({ suggestions }) {
     // ----usestate to set the category of suggestions for filtering-----
     const [filterCategory, setFilterCategory] = useState("ALL")
     // ----usestate to set the suggestions that render-----
-    const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions); 
+    const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions);
 
     //console.log(filteredSuggestions, "filtered suggestions")
 
@@ -31,7 +31,7 @@ export default function Home({ suggestions }) {
 
     useEffect(() => {
         setFilteredSuggestions(suggestions);
-      }, [suggestions]);
+    }, [suggestions]);
 
     return (
         <>
@@ -67,7 +67,7 @@ export default function Home({ suggestions }) {
 
                         return (<SuggestionCard suggestion={suggestion} key={index} />
                         )
-                    })) : 
+                    })) :
 
                     <>
                         {/* no feedback part of ternary */}
