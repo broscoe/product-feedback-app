@@ -75,6 +75,7 @@ button {
   justify-content: space-evenly;
   background-size: cover;
   width: 100%;
+  padding: .5rem;
 }
 
 .addFeedback {
