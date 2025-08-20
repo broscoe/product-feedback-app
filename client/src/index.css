@@ -93,6 +93,7 @@ button {
   background-color: #FFFFFF;
   display: block;
   padding: .5rem;
+  width: 100%;
 }
 
 .filterContainer button {
