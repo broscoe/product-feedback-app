@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './newFeedback.css'
 import plusIcon from "../assets/icons/icon-new-feedback.svg"
-//import '../index.css';
+
 
 export default function NewFeedback() {
 

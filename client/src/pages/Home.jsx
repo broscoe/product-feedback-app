@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import SuggestionCard from '../components/SuggestionCard'
 import illustrationEmpty from '../assets/suggestions/illustration-empty.svg'
 import suggestionIcon from "../assets/suggestions/icon-suggestions.svg"
-import './index.css';
+import '../index.css';
 
 export default function Home({ suggestions }) {
 
