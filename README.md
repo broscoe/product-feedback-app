@@ -10,28 +10,34 @@
 [View the Live Site](https://feedback-app-2025.netlify.app/)
 
 ## 🖼️ Screenshots
-###Mobile version
+### Mobile version
 
 **Home Page**
+
 <img width="209" height="451" alt="Mobile Home Page" src="https://github.com/user-attachments/assets/8079ab0b-60ac-4cc2-baea-a7d16cc72ab7" />
 
 **Feedback Form Page**
+
 <img width="375" height="830" alt="Mobile Feedback Form Page" src="https://github.com/user-attachments/assets/f70c3f7e-d1dd-4614-a1c9-20fc998540eb" />
 
-###Tablet Version
+### Tablet Version
 
 **Home Page**
+
 <img width="214" height="468" alt="Tablet Home Page" src="https://github.com/user-attachments/assets/8fed0028-b8ad-44f3-9d9e-efbc87dd09cc" />
 
 **Feedback Form Page**
+
 <img width="456" height="684" alt="Tablet Feedback Form Page" src="https://github.com/user-attachments/assets/70a755e1-02c9-4bfc-bbdf-4519a8790a4d" />
 
-###Desktop Version
+### Desktop Version
 
 **Home Page**
+
 <img width="396" height="537" alt="Desktop Home Page" src="https://github.com/user-attachments/assets/a98f25fa-a2b0-4b6d-8845-72941f5620af" />
 
 **Feedback Form Page**
+
 <img width="1281" height="799" alt="Desktop Feedback Form Page" src="https://github.com/user-attachments/assets/58dce1a1-3f10-49f5-af83-86317d7f4a9b" />
 
 ## ✨ Features
