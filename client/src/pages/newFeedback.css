@@ -1,8 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    font-family: jost, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-family: jost bold;
+    font-size: 24px;
+    line-height: 35px;
+    word-spacing: 0.33;
+  }
+  
+  h2 {
+    font-family: jost bold;
+    font-size: 20px;
+    line-height: 29px;
+    word-spacing: 0.25;
+  }
+  
+  h3 {
+    font-family: jost bold;
+    font-size: 18px;
+    line-height: 26px;
+    word-spacing: 0.25;
+  }
+  
+  h4 {
+    font-family: jost bold;
+    font-size: 14px;
+    line-height: 20px;
+    word-spacing: 0.2;
+  }
+  
+  button {
+    border-radius: 6px;
+    border-style: none;
+    padding: .5rem;
+  }
+ 
  body {
      background-color: #F7F8FD;
      color: #373f68;
      display: grid;
  }
+
+ form {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 6px;
+    width: 80%;
+  }
+
+  input,
+select {
+  background-color: #F2F4FF;
+  border-style: none;
+  width: 80%;
+  padding: .5rem;
+  border-radius: 6px;
+}
+
 
  Link {
      text-decoration: none;
@@ -11,16 +82,18 @@
  textarea {
      background-color: #F7F8FD;
      width: 90%;
+     border-style: none;
+     border-radius: 6px;
+     padding: .5rem;
  }
 
  #plusIcon {
-   
     border-radius: 10%;
     padding: .5rem;
     width: 2rem;
     height: 2rem;
     position:absolute;
-    top: 120px;
+    top: 190px;
  }
  
  #buttonContainer {
@@ -36,8 +109,39 @@
      min-width: 105px;
  }
 
+.cancelButton {
+    background-color: #373f68;
+    color: #FFFFFF
+  }
+  
+  .cancelButton:hover {
+    background-color: #656ea3;
+    color: #FFFFFF
+  }
+
+  .addFeedback {
+    background-color: #AD1FEA;
+    color: #FFFFFF;
+    align-self: flex-end;
+  }
+  
+  .addFeedback:hover {
+    background-color: #c75af6;
+    color: #FFFFFF;
+    align-self: flex-end;
+  }
+
+  .goBack {
+    text-decoration: none;
+    color: #373f68;
+  }
+  
+  .goBack:hover {
+    text-decoration: underline;
+  }
+  
   #formContainer {
-     grid-area: suggestionsContainer;
+     grid-area: formContainer;
  } 
 
  option:hover,
@@ -45,7 +149,26 @@
      background: plum;
  }
 
- @media (min-width:420px) {
+ @media (min-width:440px) {
+
+    #root {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          ". formContainer ."
+          ". formContainer ."
+          ". formContainer ."
+          ". formContainer ."
+          ". formContainer ."
+          ". formContainer ."
+          ". formContainer .";
+        grid-gap: 2rem;
+        margin: 16px;
+        padding: 8px;
+        align-items: center;
+        min-height: 100vh;
+      }
      
      #buttonContainer {
          flex-direction: row-reverse;
@@ -63,17 +186,34 @@
         width: 2rem;
         height: 2rem;
         position:absolute;
-        top: 215px;
+        top: 310px;
      }
  }
 
- @media (min-width:750px) {
+ @media (min-width:1025px) {
+    #root {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          ".   . . ."
+          ". formContainer formContainer ."
+          ". formContainer formContainer ."
+          ". formContainer formContainer ."
+          ". formContainer formContainer ."
+          ". formContainer formContainer ."
+          ". . . .";
+        grid-gap: 2rem;
+        margin: 16px;
+        padding: 8px;
+        align-items: center;
+      }
     #plusIcon {
         border-radius: 100%;
         padding: .5rem;
         width: 2rem;
         height: 2rem;
         position:absolute;
-        top: 175px;
+        top: 170px;
      }
  }

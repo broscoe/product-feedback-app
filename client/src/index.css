@@ -61,7 +61,6 @@ button {
   color: #FFFFFF;
   width: 100%;
   padding: .5rem;
-  /* background-repeat: no-repeat; */
   background-size: cover;
 }
 
@@ -75,18 +74,6 @@ button {
   background-size: cover;
   width: 100%;
   padding: .5rem;
-}
-
-.addFeedback {
-  background-color: #AD1FEA;
-  color: #FFFFFF;
-  align-self: flex-end;
-}
-
-.addFeedback:hover {
-  background-color: #c75af6;
-  color: #FFFFFF;
-  align-self: flex-end;
 }
 
 .filterContainer {
@@ -119,8 +106,7 @@ button {
   margin: 2rem auto;
 }
 
-.suggestionCard,
-form {
+.suggestionCard {
   background-color: #FFFFFF;
   padding: 2rem;
   margin: 1rem;
@@ -128,36 +114,12 @@ form {
   width: 80%;
 }
 
-input,
-select {
-  background-color: #F2F4FF;
-  border-style: none;
-  width: 80%;
-}
 
 .cardCategoryButton {
   background-color: #F2F4FF;
   color: #4661E6;
 }
 
-.cancelButton {
-  background-color: #373f68;
-  color: #FFFFFF
-}
-
-.cancelButton:hover {
-  background-color: #656ea3;
-  color: #FFFFFF
-}
-
-.goBack {
-  text-decoration: none;
-  color: #373f68;
-}
-
-.goBack:hover {
-  text-decoration: underline;
-}
 
 .logo {
   grid-area: logo;
@@ -254,7 +216,6 @@ select {
     margin: 16px;
     padding: 8px;
     align-items: center;
-
   }
 
   .logo {
