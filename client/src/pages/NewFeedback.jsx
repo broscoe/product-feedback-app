@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './newFeedback.css'
+import './NewFeedback.css'
 import plusIcon from "../assets/icons/icon-new-feedback.svg"
 
 
@@ -55,7 +55,7 @@ export default function NewFeedback() {
 
   return (
 
-    <>
+    <main className="NewFeedback">
       <div id="formContainer">
         <Link to="/" className="goBack"> {`< Go Back`}</Link>
 
@@ -119,7 +119,7 @@ export default function NewFeedback() {
 
         </form>
       </div>
-    </>
+    </main>
 
   )
 

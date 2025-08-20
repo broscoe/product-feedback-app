@@ -12,7 +12,6 @@
   
     margin: 0;
     padding: 0;
-    display: grid;
     place-items: center;
     min-height: 100vh;
   }
@@ -93,7 +92,7 @@ select {
     width: 2rem;
     height: 2rem;
     position:absolute;
-    top: 190px;
+    top: 20px;
  }
  
  #buttonContainer {
@@ -142,6 +141,7 @@ select {
   
   #formContainer {
      grid-area: formContainer;
+     height: 100%;
  } 
 
  option:hover,
@@ -151,7 +151,7 @@ select {
 
  @media (min-width:440px) {
 
-    #root {
+     .NewFeedback {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
@@ -162,13 +162,13 @@ select {
           ". formContainer ."
           ". formContainer ."
           ". formContainer ."
-          ". formContainer .";
+          ". . .";
         grid-gap: 2rem;
         margin: 16px;
         padding: 8px;
         align-items: center;
         min-height: 100vh;
-      }
+      } 
      
      #buttonContainer {
          flex-direction: row-reverse;
@@ -186,12 +186,12 @@ select {
         width: 2rem;
         height: 2rem;
         position:absolute;
-        top: 310px;
+        top: 40px;
      }
  }
 
  @media (min-width:1025px) {
-    #root {
+    .NewFeedback {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: auto;
@@ -214,6 +214,6 @@ select {
         width: 2rem;
         height: 2rem;
         position:absolute;
-        top: 170px;
+        top: 95px;
      }
  }

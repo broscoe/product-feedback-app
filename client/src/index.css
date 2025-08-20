@@ -12,10 +12,10 @@
 
   margin: 0;
   padding: 0;
-  display: grid;
   place-items: center;
   min-height: 100vh;
 }
+
 
 body {
   background-color: #F2F4FF;
@@ -101,6 +101,18 @@ button {
   margin: .5rem;
 }
 
+.addFeedback {
+  background-color: #AD1FEA;
+  color: #FFFFFF;
+  align-self: flex-end;
+}
+
+.addFeedback:hover {
+  background-color: #c75af6;
+  color: #FFFFFF;
+  align-self: flex-end;
+}
+
 .suggestionsContainer {
   max-width: 370px;
   margin: 2rem auto;
@@ -147,7 +159,7 @@ button {
     background-size: cover;
   }
 
-  #root {
+  .Home {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -200,7 +212,7 @@ button {
     width: 100%;
   }
 
-  #root {
+  .Home {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -248,7 +260,7 @@ button {
     background-repeat: no-repeat;
   }
 
-  #root {
+  .Home {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
