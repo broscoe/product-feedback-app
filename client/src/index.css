@@ -175,7 +175,7 @@ select {
   grid-area: suggestionsContainer;
 }
 
-@media (min-width:430px) {
+@media (min-width:440px) {
 
   .logo {
     background-image: url("./assets/suggestions/tablet/background-header.png");
@@ -229,7 +229,7 @@ select {
 }
 
 
-@media (min-width:830px) {
+@media (min-width:1025px) {
 
   .logo {
     background-image: url("./assets/suggestions/desktop/background-header.png");
@@ -279,7 +279,7 @@ select {
 
 }
 
-@media (min-width:1000px) {
+@media (min-width:1500px) {
 
   .logo {
     background-image: url("./assets/suggestions/desktop/background-header.png");
