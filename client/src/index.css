@@ -15,7 +15,6 @@
   display: grid;
   place-items: center;
   min-height: 100vh;
-  display: flex;
 }
 
 body {
@@ -100,10 +99,17 @@ button {
 .filterContainer button {
   background-color: #F2F4FF;
   color: #4661E6;
+  margin: .5rem;
 }
 
 .filterContainer button:focus {
   background-color: #4661E6;
+  color: #FFFFFF;
+  margin: .5rem;
+}
+
+.filterContainer button:hover {
+  background-color: #7c91f9;
   color: #FFFFFF;
   margin: .5rem;
 }
