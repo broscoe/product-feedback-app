@@ -100,7 +100,6 @@ button {
 .filterContainer button {
   background-color: #F2F4FF;
   color: #4661E6;
-  margin: .5rem;
 }
 
 .filterContainer button:focus {
