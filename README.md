@@ -8,7 +8,7 @@
 ## 🚀 Live Site
 
 [View the Live Site](https://feedback-app-2025.netlify.app/)
-[View the Wire Frame] (https://www.figma.com/design/ffyUs0kcwOG0gpe8N4BzYL/Product-Management-App?node-id=0-1&p=f&t=VL6TsAlnxJFKVfd7-0)
+[View the Wire Frame](https://www.figma.com/design/ffyUs0kcwOG0gpe8N4BzYL/Product-Management-App?node-id=0-1&p=f&t=VL6TsAlnxJFKVfd7-0)
 ## 🖼️ Screenshots
 ### Home Page
 
